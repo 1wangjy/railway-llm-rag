@@ -1,0 +1,59 @@
+{
+  "dataset": "testdata799.json (not distributed)",
+  "note": "Metric-only summary. Predictions and references are not distributed.",
+  "base_model": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter": "railway-qwen25-7b-lora-v1",
+  "runs": {
+    "base_qwen2.5-7b-instruct_max1024": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "adapter_used": false,
+      "rouge1": 35.66626224609231,
+      "rouge2": 17.469595834778033,
+      "rougeL": 18.685555046674608,
+      "bleu4": 11.463322936878132,
+      "bertscore_f1": 73.521488904953,
+      "segmented_bertscore_f1": 72.89308405442301,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "lora_qwen2.5-7b_max256": {
+      "num_samples": 799,
+      "max_new_tokens": 256,
+      "adapter_used": true,
+      "checkpoint": "checkpoint-7200",
+      "rouge1": 52.87024018284321,
+      "rouge2": 35.050964708637615,
+      "rougeL": 36.71103483087169,
+      "bleu4": 13.875804816914854,
+      "bertscore_f1": 80.27395606040955,
+      "segmented_bertscore_f1": 79.85905637411953,
+      "metric_protocol": "not_recorded_in_source_json"
+    },
+    "lora_qwen2.5-7b_max512": {
+      "num_samples": 799,
+      "max_new_tokens": 512,
+      "adapter_used": true,
+      "checkpoint": "checkpoint-7200",
+      "rouge1": 55.67694981834285,
+      "rouge2": 36.17677351564571,
+      "rougeL": 37.24751318110783,
+      "bleu4": 20.249951476798635,
+      "bertscore_f1": 80.36236763000488,
+      "segmented_bertscore_f1": 79.72268607447698,
+      "metric_protocol": "not_recorded_in_source_json"
+    },
+    "lora_qwen2.5-7b_max1024": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "adapter_used": true,
+      "checkpoint": "checkpoint-7200",
+      "rouge1": 56.194784960696076,
+      "rouge2": 36.4228868778047,
+      "rougeL": 37.363674826028834,
+      "bleu4": 22.42767154253021,
+      "bertscore_f1": 80.36236763000488,
+      "segmented_bertscore_f1": 79.71320006813839,
+      "metric_protocol": "not_recorded_in_source_json"
+    }
+  }
+}
