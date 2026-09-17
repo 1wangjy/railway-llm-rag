@@ -1,25 +1,117 @@
 {
-  "protocol": "new_7b_unified_generation_metrics_v1_20260823",
+  "protocol": "per-run metric_protocol is recorded below",
   "dataset": "testdata799.json (not distributed)",
   "note": "Metric-only public summary. Predictions and references are not distributed.",
   "runs": {
-    "deepseek-v4-pro-0813-direct": {
+    "chatglm3-6b": {
       "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 35.8650509553463,
+      "rouge2": 18.460884787523455,
+      "rougeL": 21.895780203454972,
+      "bleu4": 12.991748543338725,
+      "bertscore_f1": 73.23052287101746,
+      "segmented_bertscore_f1": 72.89752530357863,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "qwen2.5-7b-instruct": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 35.66626224609231,
+      "rouge2": 17.469595834778033,
+      "rougeL": 18.685555046674608,
+      "bleu4": 11.463322936878132,
+      "bertscore_f1": 73.521488904953,
+      "segmented_bertscore_f1": 72.89308405442301,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "deepseek-llm-7b-chat": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 34.53445311256003,
+      "rouge2": 17.640953673024594,
+      "rougeL": 20.966845252705284,
+      "bleu4": 12.194803520066754,
+      "bertscore_f1": 73.54258894920349,
+      "segmented_bertscore_f1": 73.08986447406677,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "llama-3.1-8b-instruct": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 33.76255190231902,
+      "rouge2": 18.045167842233564,
+      "rougeL": 21.584405468193175,
+      "bleu4": 12.168744909397152,
+      "bertscore_f1": 73.29167127609253,
+      "segmented_bertscore_f1": 72.85007436261813,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "qwen3-8b": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 22.950611360996277,
+      "rouge2": 10.746615242721148,
+      "rougeL": 10.583449091939489,
+      "bleu4": 5.477267423185617,
+      "bertscore_f1": 70.76440453529358,
+      "segmented_bertscore_f1": 70.58442877486375,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "qwen3-8b-no-thinking": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 25.803243494644846,
+      "rouge2": 12.63788487030843,
+      "rougeL": 13.2874151181893,
+      "bleu4": 6.613949645620592,
+      "bertscore_f1": 72.4097728729248,
+      "segmented_bertscore_f1": 71.09002268156355,
+      "metric_protocol": "constrast_infer_char_level_v2_20260825"
+    },
+    "deepseek-r1-distill-qwen-7b": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 22.24239298701062,
+      "rouge2": 10.143663016101186,
+      "rougeL": 11.12764224821016,
+      "bleu4": 5.202847242654754,
+      "bertscore_f1": 70.4918622970581,
+      "segmented_bertscore_f1": 70.84875455198362,
+      "metric_protocol": "constrast_infer_local_baseline_aligned_v1"
+    },
+    "qwen3.7-plus": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
+      "rouge1": 28.955744037002333,
+      "rouge2": 14.299651968861992,
+      "rougeL": 13.980632690888914,
+      "bleu4": 7.056413299653573,
+      "bertscore_f1": 72.46706485748291,
+      "segmented_bertscore_f1": 71.10945771081244,
+      "metric_protocol": "constrast_infer_local_baseline_aligned_v1"
+    },
+    "deepseek-v4-pro-0813": {
+      "num_samples": 799,
+      "max_new_tokens": 1024,
       "rouge1": 31.58293195036599,
       "rouge2": 15.934736393436378,
       "rougeL": 16.51726043734264,
       "bleu4": 7.510772639654753,
       "bertscore_f1": 72.89541959762573,
-      "segmented_bertscore_f1": 71.7077124759413
+      "segmented_bertscore_f1": 71.7077124759413,
+      "metric_protocol": "constrast_infer_local_baseline_aligned_v1"
     },
-    "glm-5-direct": {
+    "glm-5": {
       "num_samples": 799,
+      "max_new_tokens": 1024,
       "rouge1": 29.140706589085376,
       "rouge2": 14.37848094568308,
       "rougeL": 14.218962955962834,
       "bleu4": 7.452952261960035,
       "bertscore_f1": 73.03944826126099,
-      "segmented_bertscore_f1": 71.8133813113489
+      "segmented_bertscore_f1": 71.8133813113489,
+      "metric_protocol": "constrast_infer_local_baseline_aligned_v1"
     }
   }
 }
