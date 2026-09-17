@@ -142,7 +142,7 @@
       "segmented_bertscore_f1": 75.95293111736467
     },
     {
-      "model": "Qwen2.5-7B-Instruct",
+      "model": "Qwen2.5-7B-Instruct-SFT",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -157,6 +157,23 @@
       "segmented_bertscore_precision": 81.68991326394406,
       "segmented_bertscore_recall": 80.98722791168456,
       "segmented_bertscore_f1": 81.33080495086162
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "total": 799,
+      "success": 799,
+      "failed": 0,
+      "status": "完整有效（799/799成功，无失败）",
+      "rouge1": 44.21457153516206,
+      "rouge2": 31.120702696866243,
+      "rougeL": 33.979548039765376,
+      "bleu4": 7.588271332360947,
+      "bertscore_precision": 80.67454099655151,
+      "bertscore_recall": 75.75612664222717,
+      "bertscore_f1": 77.79178023338318,
+      "segmented_bertscore_precision": 77.87046814469572,
+      "segmented_bertscore_recall": 77.31240481165781,
+      "segmented_bertscore_f1": 77.58566253505606
     }
   ]
 }
