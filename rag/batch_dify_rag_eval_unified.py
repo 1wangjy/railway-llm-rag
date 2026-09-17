@@ -13,10 +13,10 @@ from datetime import datetime
 from functools import lru_cache
 
 
-DEFAULT_DATA_DIR = "/data16T/wjy/Learn_llm/铁路大模型/dataset_splits"
-DEFAULT_OUTPUT_DIR = "/data16T/wjy/Learn_llm/铁路大模型/new_7b/rag_eval/outputs"
-DEFAULT_BASE_URL = "http://127.0.0.1:18081/v1"
-DEFAULT_BERTSCORE_MODEL = "/data16T/wjy/models/Bert"
+DEFAULT_DATA_DIR = os.getenv("RAG_DATA_DIR", "data")
+DEFAULT_OUTPUT_DIR = os.getenv("RAG_OUTPUT_DIR", "outputs")
+DEFAULT_BASE_URL = os.getenv("DIFY_BASE_URL", "http://127.0.0.1:18081/v1")
+DEFAULT_BERTSCORE_MODEL = os.getenv("BERTSCORE_MODEL", "bert-base-chinese")
 METRIC_PROTOCOL = "new_7b_unified_generation_metrics_v1_20260823"
 
 

@@ -4,12 +4,13 @@ Only edit this file when changing the Qwen2.5 inference experiment.
 The shared inference framework lives in ``infer_common.py``.
 """
 
+import os
 from types import SimpleNamespace
 
 
 # ============== 1. Paths and experiment identity ==========================
-MODEL_PATH = "/data16T/wjy/models/Qwen2.5-7B-Instruct"
-EVAL_DATASET_PATH = "/data16T/wjy/Learn_llm/铁路大模型/dataset_splits/testdata799.json"
+MODEL_PATH = os.path.join(os.getenv("MODEL_ROOT", "models"), "Qwen2.5-7B-Instruct")
+EVAL_DATASET_PATH = os.getenv("EVAL_DATASET_PATH", "data/testdata799.json")
 OUTPUT_PATH = "outputs/qwen25_7b_base_testdata799_system_max1024_predictions.json"
 CUDA_VISIBLE_DEVICES = "2"
 
@@ -57,7 +58,7 @@ BLEU_MAX_ORDER = 4
 BLEU_SMOOTH_VALUE = 0.0  # Set to 0.1 if add-k smoothing is desired.
 
 ENABLE_BERTSCORE = True
-BERTSCORE_MODEL_TYPE = "/data16T/wjy/models/Bert"
+BERTSCORE_MODEL_TYPE = os.getenv("BERTSCORE_MODEL", "bert-base-chinese")
 BERTSCORE_NUM_LAYERS = 12
 BERTSCORE_LANG = "zh"
 BERTSCORE_BATCH_SIZE = 8

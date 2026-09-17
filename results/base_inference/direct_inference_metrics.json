@@ -1,0 +1,25 @@
+{
+  "protocol": "new_7b_unified_generation_metrics_v1_20260823",
+  "dataset": "testdata799.json (not distributed)",
+  "note": "Metric-only public summary. Predictions and references are not distributed.",
+  "runs": {
+    "deepseek-v4-pro-0813-direct": {
+      "num_samples": 799,
+      "rouge1": 31.58293195036599,
+      "rouge2": 15.934736393436378,
+      "rougeL": 16.51726043734264,
+      "bleu4": 7.510772639654753,
+      "bertscore_f1": 72.89541959762573,
+      "segmented_bertscore_f1": 71.7077124759413
+    },
+    "glm-5-direct": {
+      "num_samples": 799,
+      "rouge1": 29.140706589085376,
+      "rouge2": 14.37848094568308,
+      "rougeL": 14.218962955962834,
+      "bleu4": 7.452952261960035,
+      "bertscore_f1": 73.03944826126099,
+      "segmented_bertscore_f1": 71.8133813113489
+    }
+  }
+}

@@ -4,12 +4,13 @@ Use ``python run_infer.py --model qwen3_8b``. The shared inference framework
 is in ``infer_common.py``; edit only this file for a Qwen3-8B experiment.
 """
 
+import os
 from types import SimpleNamespace
 
 
 # ============== 1. Paths and experiment identity ==========================
-MODEL_PATH = "/data16T/wjy/models/Qwen3-8B"
-EVAL_DATASET_PATH = "/data16T/wjy/Learn_llm/铁路大模型/dataset_splits/testdata799.json"
+MODEL_PATH = os.path.join(os.getenv("MODEL_ROOT", "models"), "Qwen3-8B")
+EVAL_DATASET_PATH = os.getenv("EVAL_DATASET_PATH", "data/testdata799.json")
 # Keeps the prior reasoning-mode output untouched.
 OUTPUT_PATH = "outputs/qwen3_8b_base_testdata799_system_max1024_no_thinking_predictions.json"
 CUDA_VISIBLE_DEVICES = "3"
@@ -58,7 +59,7 @@ ENABLE_BLEU = True
 BLEU_MAX_ORDER = 4
 BLEU_SMOOTH_VALUE = 0.0
 ENABLE_BERTSCORE = True
-BERTSCORE_MODEL_TYPE = "/data16T/wjy/models/Bert"
+BERTSCORE_MODEL_TYPE = os.getenv("BERTSCORE_MODEL", "bert-base-chinese")
 BERTSCORE_NUM_LAYERS = 12
 BERTSCORE_LANG = "zh"
 BERTSCORE_BATCH_SIZE = 8

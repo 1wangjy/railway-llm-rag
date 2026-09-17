@@ -1,6 +1,6 @@
 """环境：unsloth"""
 # export CUDA_VISIBLE_DEVICES=0
-# python /data16T/wjy/Learn_llm/train_unsloth.py
+# Run through finetune/run_train.sh with an explicit configuration file.
 # 训练结果保存在远程服务器的日志：20250818_1.log
 
 # nohup python train_unsloth.py > 20260415_resume.log 2>&1 &

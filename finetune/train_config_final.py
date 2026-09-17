@@ -1,11 +1,16 @@
-"""Self-contained stability recheck configuration: lr3e-4_seed42.py."""
+"""Final public training configuration: lr=3e-4, seed=42."""
 
-CONFIG = {'model_path': '/data16T/wjy/models/Qwen2.5-7B-Instruct',
- 'bootstrap_adapter_dir': '/data16T/wjy/models/Qwen2.5-7B-Instruct/railway_lora_unsloth-adapter_best',
- 'output_root': '/data16T/wjy/models/Qwen2.5-7B-Instruct',
+import os
+
+MODEL_ROOT = os.getenv("MODEL_ROOT", "models")
+PROJECT_ROOT = os.getenv("PROJECT_ROOT", ".")
+
+CONFIG = {'model_path': os.path.join(MODEL_ROOT, 'Qwen2.5-7B-Instruct'),
+ 'bootstrap_adapter_dir': os.getenv('BOOTSTRAP_ADAPTER_DIR', ''),
+ 'output_root': os.getenv('OUTPUT_ROOT', 'outputs'),
  'experiment_name': 'qwen25_7b_data7236_lr3e-4_r64alpha64_warmup50_seed42_from_base',
- 'train_dataset_path': '/data16T/wjy/Learn_llm/铁路大模型/dataset_splits/traindata7236.json',
- 'eval_dataset_path': '/data16T/wjy/Learn_llm/铁路大模型/dataset_splits/testdata799.json',
+ 'train_dataset_path': os.getenv('TRAIN_DATASET_PATH', os.path.join(PROJECT_ROOT, 'data', 'traindata7236.json')),
+ 'eval_dataset_path': os.getenv('EVAL_DATASET_PATH', os.path.join(PROJECT_ROOT, 'data', 'testdata799.json')),
  'cuda_visible_devices': '3',
  'max_seq_length': 2048,
  'model_dtype': None,
@@ -63,7 +68,7 @@ CONFIG = {'model_path': '/data16T/wjy/models/Qwen2.5-7B-Instruct',
  'generation_do_sample': False,
  'generation_skip_special_tokens': True,
  'enable_bertscore': True,
- 'bertscore_model_type': '/data16T/wjy/models/Bert',
+ 'bertscore_model_type': os.getenv('BERTSCORE_MODEL', 'bert-base-chinese'),
  'bertscore_num_layers': 12,
  'bertscore_lang': 'zh',
  'bertscore_batch_size': 8,

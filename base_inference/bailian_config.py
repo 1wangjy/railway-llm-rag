@@ -1,5 +1,7 @@
 """Bailian API inference configuration aligned with local baseline evaluation."""
 
+import os
+
 # API model and endpoint. The shared Beijing endpoint accepts API keys from
 # workspaces in the same region; a workspace-dedicated endpoint can override it.
 BAILIAN_MODEL = "glm-5"
@@ -7,14 +9,8 @@ BAILIAN_BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 API_KEY_ENV = "DASHSCOPE_API_KEY"
 
 # Dataset and output paths
-EVAL_DATASET_PATH = (
-    "/data16T/wjy/Learn_llm/铁路大模型/"
-    "dataset_splits/testdata799.json"
-)
-OUTPUT_PATH = (
-    "/data16T/wjy/Learn_llm/铁路大模型/constrast_infer/"
-    "outputs/glm5_direct_testdata799_system_max1024_predictions.json"
-)
+EVAL_DATASET_PATH = os.getenv("EVAL_DATASET_PATH", "data/testdata799.json")
+OUTPUT_PATH = os.getenv("OUTPUT_PATH", "outputs/glm5_direct_testdata799_system_max1024_predictions.json")
 
 # Keep these fields identical to infer_config.py.
 DATASET_SPLIT = "train"
@@ -44,7 +40,7 @@ RESUME = True
 # Metrics: identical to infer_config.py
 BLEU_MAX_ORDER = 4
 BLEU_SMOOTH_VALUE = 0.0
-BERTSCORE_MODEL_TYPE = "/data16T/wjy/models/Bert"
+BERTSCORE_MODEL_TYPE = os.getenv("BERTSCORE_MODEL", "bert-base-chinese")
 BERTSCORE_NUM_LAYERS = 12
 BERTSCORE_LANG = "zh"
 BERTSCORE_BATCH_SIZE = 8

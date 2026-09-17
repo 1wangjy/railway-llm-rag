@@ -11,14 +11,15 @@ from configs.ling3_tiny_config import CONFIG as LING3_TINY_CONFIG
 # ============== 1、推荐参数区：通常只需要改这里 ==========================
 
 # 模型与输出路径
+MODEL_ROOT = os.getenv("MODEL_ROOT", "models")
 MODEL_ROOTS = {
-    "chatglm3_6b": "/data16T/wjy/models/chatglm3-6b",
-    "deepseek_llm_7b_chat": "/data16T/wjy/models/deepseek-llm-7b-chat",
-    "deepseek_r1_7b": "/data16T/wjy/models/DeepSeek-R1-Distill-Qwen-7B",
-    "llama31_8b": "/data16T/wjy/models/Llama-3.1-8B-Instruct",
-    "qwen25_7b": "/data16T/wjy/models/Qwen2.5-7B-Instruct",
-    "qwen3_8b": "/data16T/wjy/models/Qwen3-8B",
-    "ling3_tiny": "/data16T/wjy/models/Ling-3.0-tiny",
+    "chatglm3_6b": os.path.join(MODEL_ROOT, "chatglm3-6b"),
+    "deepseek_llm_7b_chat": os.path.join(MODEL_ROOT, "deepseek-llm-7b-chat"),
+    "deepseek_r1_7b": os.path.join(MODEL_ROOT, "DeepSeek-R1-Distill-Qwen-7B"),
+    "llama31_8b": os.path.join(MODEL_ROOT, "Llama-3.1-8B-Instruct"),
+    "qwen25_7b": os.path.join(MODEL_ROOT, "Qwen2.5-7B-Instruct"),
+    "qwen3_8b": os.path.join(MODEL_ROOT, "Qwen3-8B"),
+    "ling3_tiny": os.path.join(MODEL_ROOT, "Ling-3.0-tiny"),
 }
 
 MODEL_GPUS = {
@@ -34,7 +35,7 @@ MODEL_GPUS = {
 OUTPUT_ROOT = "outputs"
 
 # 数据路径与字段
-eval_dataset_path = "/data16T/wjy/Learn_llm/铁路大模型/dataset_splits/testdata799.json"
+eval_dataset_path = os.getenv("EVAL_DATASET_PATH", "data/testdata799.json")
 dataset_split = "train"
 dataset_batched = True
 instruction_column = "instruction"
@@ -78,7 +79,7 @@ bleu_smooth_value = 0.0  # 如需 add-k 平滑可改为 0.1
 
 # BERTScore 配置
 enable_bertscore = True
-bertscore_model_type = "/data16T/wjy/models/Bert"
+bertscore_model_type = os.getenv("BERTSCORE_MODEL", "bert-base-chinese")
 bertscore_num_layers = 12
 bertscore_lang = "zh"
 bertscore_batch_size = 8
