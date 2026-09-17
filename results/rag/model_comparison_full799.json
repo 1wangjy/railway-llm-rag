@@ -7,7 +7,6 @@
   "runs": [
     {
       "model": "Qwen2.5-32B",
-      "configuration": "Ollama",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -25,7 +24,6 @@
     },
     {
       "model": "Qwen3.7-Plus",
-      "configuration": "新提示词",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -43,7 +41,6 @@
     },
     {
       "model": "ChatGLM3-6B",
-      "configuration": "v2工作流",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -61,7 +58,6 @@
     },
     {
       "model": "Llama-3.1-8B-Instruct",
-      "configuration": "v2工作流",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -79,7 +75,6 @@
     },
     {
       "model": "Qwen3-8B",
-      "configuration": "v2工作流",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -97,7 +92,6 @@
     },
     {
       "model": "DeepSeek-R1-Distill-Qwen-7B",
-      "configuration": "v2工作流",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -115,7 +109,6 @@
     },
     {
       "model": "DeepSeek-V4-Pro-0813",
-      "configuration": "direct fallback，Score阈值0.50",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -133,7 +126,6 @@
     },
     {
       "model": "GLM-5",
-      "configuration": "Dify，通用模式，threshold=0.80，top_k=3",
       "total": 799,
       "success": 799,
       "failed": 0,
@@ -148,6 +140,23 @@
       "segmented_bertscore_precision": 76.2902515802905,
       "segmented_bertscore_recall": 75.63149369676563,
       "segmented_bertscore_f1": 75.95293111736467
+    },
+    {
+      "model": "Qwen2.5-7B-Instruct",
+      "total": 799,
+      "success": 799,
+      "failed": 0,
+      "status": "完整有效（799/799成功，无失败）",
+      "rouge1": 54.19477065562114,
+      "rouge2": 39.43383750962274,
+      "rougeL": 41.49790226603281,
+      "bleu4": 12.545254684059822,
+      "bertscore_precision": 83.2301139831543,
+      "bertscore_recall": 80.65358400344849,
+      "bertscore_f1": 81.66623115539551,
+      "segmented_bertscore_precision": 81.68991326394406,
+      "segmented_bertscore_recall": 80.98722791168456,
+      "segmented_bertscore_f1": 81.33080495086162
     }
   ]
 }
