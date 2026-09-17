@@ -1,6 +1,6 @@
 {
-  "best_metric": 79.6344270352623,
-  "best_global_step": 6600,
-  "source_checkpoint": "/data16T/wjy/models/Qwen2.5-7B-Instruct/qwen25_7b_data7236_lr4.5e-4_r64alpha64_warmup50_seed42_from_base_checkpoints/checkpoint-6600",
+  "best_metric": 79.76306056835053,
+  "best_global_step": 7200,
+  "source_checkpoint": "checkpoint-7200",
   "metric_name": "eval_bertscore_segmented_f1"
 }
