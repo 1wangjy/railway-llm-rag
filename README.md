@@ -1,4 +1,12 @@
-# Railway LLM RAG
+# RailOpsLLM
+
+## A Domain-Adaptive Large Language Model for Railway Information System Operation and Maintenance via Fine-Tuning and Retrieval-Augmented Generation
+
+<p align="center">
+  <img src="assets/railopsllm-overview.png" alt="RailOpsLLM system overview" width="920">
+</p>
+
+<p align="center"><em>Figure 1. Overview of the RailOpsLLM framework.</em></p>
 
 Reproducibility code and metric-only artifacts for railway-domain question answering.
 
