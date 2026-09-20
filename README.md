@@ -10,6 +10,26 @@
 
 Reproducibility code and metric-only artifacts for railway-domain question answering.
 
+## Dataset composition
+
+The railway O&M instruction dataset contains 27,326 instruction-response pairs
+across five knowledge categories.
+
+<p align="center">
+  <img src="assets/Table%201-Data%20category.png"
+       alt="Composition of the railway O&M instruction dataset"
+       width="920">
+</p>
+
+<p align="center">
+  <em>Figure 2. Composition of the railway operation and maintenance instruction dataset.</em>
+</p>
+
+The public repository does not distribute the source documents, raw instruction
+data, private railway materials, or personally identifiable information. Only
+aggregate dataset statistics are reported for reproducibility and privacy
+protection.
+
 ## Scope and data policy
 
 This repository contains fine-tuning, Dify RAG evaluation and direct-inference code. It deliberately does **not** distribute training data, test data, railway knowledge-base text, API keys, raw prompts, predictions, traces, runtime logs or base-model weights.
