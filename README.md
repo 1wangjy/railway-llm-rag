@@ -4,7 +4,6 @@
 
 <p align="center">
   <a href="https://github.com/1wangjy/railway-llm-rag">Code</a> |
-  <a href="https://github.com/1wangjy/railway-llm-rag/releases/tag/v1.0.1">Model Release</a> |
   <a href="results/">Results</a>
 </p>
 
@@ -22,11 +21,13 @@ This public repository contains desensitized code, model metadata, aggregate dat
 - Unified evaluation on a held-out set of 799 samples using ROUGE, BLEU-4, and BERTScore variants.
 - Final adapter selected at checkpoint 7200 with recorded segmented BERTScore F1 of `79.7631`.
 
+<!--
 ## Latest release
 
 - **Railway Qwen2.5-7B LoRA v1.0.1**: [download the adapter and checksums](https://github.com/1wangjy/railway-llm-rag/releases/tag/v1.0.1).
 - Base model: [`Qwen/Qwen2.5-7B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-7B-Instruct).
 - The release contains the LoRA adapter and tokenizer assets, not the base model or private datasets.
+-->
 
 ## Contents
 
@@ -36,7 +37,6 @@ This public repository contains desensitized code, model metadata, aggregate dat
 - [Fine-tuning results](#fine-tuning-results)
 - [RAG results](#rag-results)
 - [Base-model direct-inference results](#base-model-direct-inference-results)
-- [Model release](#model-release)
 - [Repository layout](#repository-layout)
 - [Environment](#environment)
 - [Fine-tuning](#fine-tuning)
@@ -130,6 +130,7 @@ The full ten-model RAG comparison is documented in [`results/rag/README.md`](res
 
 Metrics and the protocol recorded for each run are available in [`results/base_inference/direct_inference_metrics.json`](results/base_inference/direct_inference_metrics.json). Because historical runs record different metric protocol identifiers, compare them with the per-run protocol metadata rather than assuming all values came from an identical evaluation implementation.
 
+<!--
 ## Model release
 
 | Item | Value |
@@ -151,6 +152,7 @@ Metrics and the protocol recorded for each run are available in [`results/base_i
 | Recorded best metric | `79.76306056835053` |
 
 Download the final adapter from [GitHub Releases](https://github.com/1wangjy/railway-llm-rag/releases/tag/v1.0.1). Verify the archive with the accompanying SHA-256 checksum before use. See [`model/MODEL_CARD.md`](model/MODEL_CARD.md) and [`model/RELEASE_MANIFEST.md`](model/RELEASE_MANIFEST.md) for metadata and integrity information.
+-->
 
 ## Repository layout
 
