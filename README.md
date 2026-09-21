@@ -90,24 +90,43 @@ All reported scores use a `0-100` scale. The private evaluation set contains 799
 | Model | Adapter | Max new tokens | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU-4 | BERTScore F1 | Segmented BERTScore F1 |
 |---|:---:|---:|---:|---:|---:|---:|---:|---:|
 | Qwen2.5-7B-Instruct | No | 1024 | 35.6663 | 17.4696 | 18.6856 | 11.4633 | 73.5215 | 72.8931 |
-| RailOpsLLM LoRA | Yes | 1024 | **56.1948** | **36.4229** | **37.3637** | **22.4277** | **80.3624** | **79.7132** |
+| RailOpsLLM LoRA (`checkpoint-7200`) | Yes | 256 | 52.8702 | 35.0510 | 36.7110 | 13.8758 | 80.2740 | **79.8591** |
+| RailOpsLLM LoRA (`checkpoint-7200`) | Yes | 512 | 55.6769 | 36.1768 | 37.2475 | 20.2500 | 80.3624 | 79.7227 |
+| RailOpsLLM LoRA (`checkpoint-7200`) | Yes | 1024 | **56.1948** | **36.4229** | **37.3637** | **22.4277** | **80.3624** | 79.7132 |
 
 Complete generation-length results are available in [`results/finetune/generation_metrics.json`](results/finetune/generation_metrics.json).
 
 ### RAG results
 
-| Model / workflow | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU-4 | BERTScore F1 | Segmented BERTScore F1 | Status |
-|---|---:|---:|---:|---:|---:|---:|---|
-| Qwen2.5-7B-Instruct | 44.2146 | 31.1207 | 33.9795 | 7.5883 | 77.7918 | 77.5857 | 799/799 |
-| Qwen2.5-7B-Instruct-SFT | **54.1948** | **39.4338** | **41.4979** | **12.5453** | **81.6662** | **81.3308** | 799/799 |
-| GLM-5 | 39.6198 | 28.7304 | 31.5458 | 4.9146 | 76.1688 | 75.9529 | 799/799 |
-| DeepSeek-V4-Pro-0813 | 45.7284 | 34.7586 | 38.0347 | 4.5094 | 78.8318 | 78.6120 | 799/799 |
+| Model / workflow | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU-4 | BERTScore P | BERTScore R | BERTScore F1 | Seg. P | Seg. R | Seg. F1 | Status |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| Qwen2.5-32B | 42.3890 | 24.2712 | 27.4604 | 10.8935 | 73.9407 | 74.8593 | 74.1369 | 74.0429 | 73.6858 | 73.8603 | Complete |
+| Qwen3.7-Plus | 33.2360 | 21.4453 | 24.2434 | 8.6570 | 76.0328 | 68.5623 | 71.4814 | 71.2679 | 71.0126 | 71.1331 | Complete |
+| ChatGLM3-6B | 34.1442 | 19.8104 | 22.9115 | 8.9152 | 72.0726 | 71.1778 | 71.2978 | 71.2829 | 70.9047 | 71.0888 | Complete; resumed 83 samples |
+| Llama-3.1-8B-Instruct | 33.6550 | 16.1281 | 19.6592 | 9.3309 | 69.4651 | 70.6718 | 69.8523 | 69.8042 | 69.4261 | 69.6122 | Complete |
+| Qwen3-8B | 30.4191 | 15.6058 | 16.5670 | 8.0385 | 70.3057 | 77.5017 | 73.4518 | 71.9579 | 73.2378 | 72.5823 | Complete |
+| DeepSeek-R1-Distill-Qwen-7B | 1.2155 | 0.3360 | 0.9974 | 0.1240 | 46.9599 | 46.9337 | 46.9223 | 47.0011 | 47.1079 | 47.0526 | Complete |
+| DeepSeek-V4-Pro-0813 | 45.7284 | 34.7586 | 38.0347 | 4.5094 | 83.4941 | 75.2203 | 78.8318 | 78.9359 | 78.3018 | 78.6120 | Complete; no prediction truncation |
+| GLM-5 | 39.6198 | 28.7304 | 31.5458 | 4.9146 | 81.3714 | 72.4507 | 76.1688 | 76.2903 | 75.6315 | 75.9529 | Complete |
+| Qwen2.5-7B-Instruct | 44.2146 | 31.1207 | 33.9795 | 7.5883 | 80.6745 | 75.7561 | 77.7918 | 77.8705 | 77.3124 | 77.5857 | Complete |
+| Qwen2.5-7B-Instruct-SFT | **54.1948** | **39.4338** | **41.4979** | **12.5453** | **83.2301** | **80.6536** | **81.6662** | **81.6899** | **80.9872** | **81.3308** | Complete |
 
 The full ten-model RAG comparison is documented in [`results/rag/README.md`](results/rag/README.md), with machine-readable metrics in [`results/rag/model_comparison_full799.json`](results/rag/model_comparison_full799.json).
 
 ### Base-model direct-inference results
 
-Direct inference covers ChatGLM3-6B, Qwen2.5-7B-Instruct, DeepSeek-LLM-7B-Chat, Llama-3.1-8B-Instruct, Qwen3-8B, Qwen3-8B no-thinking, DeepSeek-R1-Distill-Qwen-7B, Qwen3.7-Plus, DeepSeek-V4-Pro-0813, and GLM-5.
+| Model | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU-4 | BERTScore F1 | Segmented BERTScore F1 | Metric protocol |
+|---|---:|---:|---:|---:|---:|---:|---|
+| ChatGLM3-6B | **35.8651** | **18.4609** | 21.8958 | **12.9917** | 73.2305 | 72.8975 | `constrast_infer_char_level_v2_20260825` |
+| Qwen2.5-7B-Instruct | 35.6663 | 17.4696 | 18.6856 | 11.4633 | 73.5215 | 72.8931 | `constrast_infer_char_level_v2_20260825` |
+| DeepSeek-LLM-7B-Chat | 34.5345 | 17.6410 | 20.9668 | 12.1948 | **73.5426** | **73.0899** | `constrast_infer_char_level_v2_20260825` |
+| Llama-3.1-8B-Instruct | 33.7626 | 18.0452 | **21.5844** | 12.1687 | 73.2917 | 72.8501 | `constrast_infer_char_level_v2_20260825` |
+| Qwen3-8B | 22.9506 | 10.7466 | 10.5834 | 5.4773 | 70.7644 | 70.5844 | `constrast_infer_char_level_v2_20260825` |
+| Qwen3-8B (no thinking) | 25.8032 | 12.6379 | 13.2874 | 6.6139 | 72.4098 | 71.0900 | `constrast_infer_char_level_v2_20260825` |
+| DeepSeek-R1-Distill-Qwen-7B | 22.2424 | 10.1437 | 11.1276 | 5.2028 | 70.4919 | 70.8488 | `constrast_infer_local_baseline_aligned_v1` |
+| Qwen3.7-Plus | 28.9557 | 14.2997 | 13.9806 | 7.0564 | 72.4671 | 71.1095 | `constrast_infer_local_baseline_aligned_v1` |
+| DeepSeek-V4-Pro-0813 | 31.5829 | 15.9347 | 16.5173 | 7.5108 | 72.8954 | 71.7077 | `constrast_infer_local_baseline_aligned_v1` |
+| GLM-5 | 29.1407 | 14.3785 | 14.2190 | 7.4530 | 73.0394 | 71.8134 | `constrast_infer_local_baseline_aligned_v1` |
 
 Metrics and the protocol recorded for each run are available in [`results/base_inference/direct_inference_metrics.json`](results/base_inference/direct_inference_metrics.json). Because historical runs record different metric protocol identifiers, compare them with the per-run protocol metadata rather than assuming all values came from an identical evaluation implementation.
 
