@@ -22,7 +22,7 @@ across five knowledge categories.
 </p>
 
 <p align="center">
-  <em>Figure 2. Composition of the railway operation and maintenance instruction dataset.</em>
+  <em>Table 1. Composition of the railway operation and maintenance instruction dataset.</em>
 </p>
 
 ### Chinese version
@@ -34,7 +34,7 @@ across five knowledge categories.
 </p>
 
 <p align="center">
-  <em>Figure 3. 各类型指令微调数据集统计表。</em>
+  <em>Table 6.1. 各类型指令微调数据集统计表。</em>
 </p>
 
 
