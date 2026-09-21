@@ -1,4 +1,4 @@
-# RailOpsLLM
+# Rail|OpsLLM
 
 ## A Domain-Adaptive Large Language Model for Railway Information System Operation and Maintenance via Fine-Tuning and Retrieval-Augmented Generation
 
@@ -9,7 +9,7 @@
 
 ## Abstract
 
-RailOpsLLM is a domain-adaptive large language model project for question answering in railway information-system operation and maintenance (O&M). It combines parameter-efficient LoRA fine-tuning of `Qwen/Qwen2.5-7B-Instruct` with retrieval-augmented generation (RAG), and provides reproducible code for fine-tuning, Dify-based RAG evaluation, direct base-model inference, and unified metric reporting.
+Rail|OpsLLM is a domain-adaptive large language model project for question answering in railway information-system operation and maintenance (O&M). It combines parameter-efficient LoRA fine-tuning of `Qwen/Qwen2.5-7B-Instruct` with retrieval-augmented generation (RAG), and provides reproducible code for fine-tuning, Dify-based RAG evaluation, direct base-model inference, and unified metric reporting.
 
 This public repository contains desensitized code, model metadata, aggregate dataset statistics, selected evaluation summaries, and the final LoRA adapter release. It does not distribute private railway documents, raw instruction data, knowledge-base content, credentials, prompts, predictions, traces, runtime logs, or base-model weights.
 
@@ -48,10 +48,10 @@ This public repository contains desensitized code, model metadata, aggregate dat
 ## Framework
 
 <p align="center">
-  <img src="assets/railopsllm-overview.png" alt="RailOpsLLM system overview" width="920">
+  <img src="assets/railopsllm-overview.png" alt="Rail|OpsLLM system overview" width="920">
 </p>
 
-<p align="center"><em>Figure 1. Overview of the RailOpsLLM framework.</em></p>
+<p align="center"><em>Figure 1. Overview of the Rail|OpsLLM framework.</em></p>
 
 ## Dataset composition
 
@@ -90,9 +90,9 @@ All reported scores use a `0-100` scale. The private evaluation set contains 799
 | Model | Adapter | Max new tokens | ROUGE-1 | ROUGE-2 | ROUGE-L | BLEU-4 | BERTScore F1 | Segmented BERTScore F1 |
 |---|:---:|---:|---:|---:|---:|---:|---:|---:|
 | Qwen2.5-7B-Instruct | No | 1024 | 35.6663 | 17.4696 | 18.6856 | 11.4633 | 73.5215 | 72.8931 |
-| RailOpsLLM LoRA (`checkpoint-7200`) | Yes | 256 | 52.8702 | 35.0510 | 36.7110 | 13.8758 | 80.2740 | **79.8591** |
-| RailOpsLLM LoRA (`checkpoint-7200`) | Yes | 512 | 55.6769 | 36.1768 | 37.2475 | 20.2500 | 80.3624 | 79.7227 |
-| RailOpsLLM LoRA (`checkpoint-7200`) | Yes | 1024 | **56.1948** | **36.4229** | **37.3637** | **22.4277** | **80.3624** | 79.7132 |
+| Rail|OpsLLM LoRA (`checkpoint-7200`) | Yes | 256 | 52.8702 | 35.0510 | 36.7110 | 13.8758 | 80.2740 | **79.8591** |
+| Rail|OpsLLM LoRA (`checkpoint-7200`) | Yes | 512 | 55.6769 | 36.1768 | 37.2475 | 20.2500 | 80.3624 | 79.7227 |
+| Rail|OpsLLM LoRA (`checkpoint-7200`) | Yes | 1024 | **56.1948** | **36.4229** | **37.3637** | **22.4277** | **80.3624** | 79.7132 |
 
 Complete generation-length results are available in [`results/finetune/generation_metrics.json`](results/finetune/generation_metrics.json).
 
