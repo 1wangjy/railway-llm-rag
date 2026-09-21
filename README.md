@@ -110,6 +110,40 @@ bash base_inference/run_infer_qwen25_7b_eval.sh --fg
 
 Verify the release archive with its accompanying `.sha256` file. The final adapter was selected at checkpoint-7200 with segmented BERTScore F1 79.76306056835053.
 
+## Data privacy and safety statement
+
+This project focuses on large language models for railway information system
+operation and maintenance. The dataset may involve railway operation,
+maintenance, equipment, information-system, emergency-response, and expert
+knowledge materials. Users must ensure that all data used with this project has
+been lawfully obtained and is authorized for research, development, and
+evaluation purposes.
+
+The public repository does not distribute original railway documents, raw
+instruction data, internal system records, operational logs, credentials,
+network information, personal information, or other confidential materials.
+Only desensitized code, aggregate dataset statistics, selected evaluation
+results, and model-related metadata are released. Before using any data, users
+should remove personal identifiers, account information, access credentials,
+network addresses, equipment identifiers, proprietary technical details, and
+other information that could create security or privacy risks.
+
+This project is intended for research and evaluation only. Model outputs may
+be incomplete, inaccurate, outdated, or misleading, and must not be treated as
+authoritative instructions for railway operation, equipment maintenance,
+dispatching, emergency response, cybersecurity, or other safety-critical
+activities. Any output used in practice must be reviewed and verified by
+qualified railway professionals against approved procedures and authoritative
+source documents.
+
+Users are responsible for protecting local data, controlling access to
+datasets and model services, preventing unauthorized disclosure, and complying
+with applicable laws, regulations, organizational policies, data-management
+requirements, and information-security standards. The authors do not guarantee
+that the model is suitable for a particular railway system or operational
+scenario and are not responsible for losses or risks caused by unauthorized
+data use, unverified model outputs, or improper deployment.
+
 ## Licence
 
 No licence has yet been selected. Contact the repository owner before reusing this code or any derivative artifact.
