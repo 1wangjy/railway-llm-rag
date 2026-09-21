@@ -25,6 +25,19 @@ across five knowledge categories.
   <em>Figure 2. Composition of the railway operation and maintenance instruction dataset.</em>
 </p>
 
+### Chinese version
+
+<p align="center">
+  <img src="assets/table-6-1-dataset-composition-cn.png"
+       alt="表 6.1 各类型指令微调数据集统计表"
+       width="920">
+</p>
+
+<p align="center">
+  <em>Figure 3. 各类型指令微调数据集统计表。</em>
+</p>
+
+
 The public repository does not distribute the source documents, raw instruction
 data, private railway materials, or personally identifiable information. Only
 aggregate dataset statistics are reported for reproducibility and privacy
